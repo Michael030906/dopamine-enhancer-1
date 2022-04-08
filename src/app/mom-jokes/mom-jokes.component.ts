@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit} from '@angular/core';
+import { MomJokeApiService } from './mom-joke-api.service'
 @Component({
   selector: 'app-mom-jokes',
   templateUrl: './mom-jokes.component.html',
@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MomJokesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiData:MomJokeApiService){
+    this.apiData.apiData().subscribe(data=>{
+      console.warn(data)
+    })
+  }
 
   ngOnInit(): void {
   }
