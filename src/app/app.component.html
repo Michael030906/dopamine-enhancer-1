@@ -1,3 +1,8 @@
-<app-nav-bar></app-nav-bar>
-<hr>
-<app-mom-jokes></app-mom-jokes>
+<app-nav-bar (featureSelected)="onNavigate($event)"></app-nav-bar>
+<hr />
+<app-home-page *ngIf="loadedFeature === 'home'"></app-home-page>
+<app-mom-jokes *ngIf="loadedFeature === 'mom-jokes'"></app-mom-jokes>
+<app-dad-jokes *ngIf="loadedFeature === 'dad-jokes'"></app-dad-jokes>
+<app-wholesome-facts
+  *ngIf="loadedFeature === 'wholesome-facts'"
+></app-wholesome-facts>

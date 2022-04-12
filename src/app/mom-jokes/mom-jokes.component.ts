@@ -8,12 +8,15 @@ import { MomJokeApiService } from './mom-joke-api.service'
 export class MomJokesComponent implements OnInit {
 
   constructor(private apiData:MomJokeApiService){
-    this.apiData.apiData().subscribe(data=>{
-      console.warn(data)
-    })
+    // this.apiData.apiData().subscribe(data=>{
+    //   console.log(data)
+    // })
   }
 
   ngOnInit(): void {
-  }
+    // this.apiData.apiData()
+    const res = this.apiData.apiData()
+    console.log(res)
 
+  }
 }

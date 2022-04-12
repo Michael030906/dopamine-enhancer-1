@@ -8,7 +8,14 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { MomJokesComponent } from './mom-jokes/mom-jokes.component';
 import { DadJokesComponent } from './dad-jokes/dad-jokes.component';
 import { WholesomeFactsComponent } from './wholesome-facts/wholesome-facts.component';
+import { RouterModule, Routes } from '@angular/router';
 
+const appRoutes: Routes = [
+  {path: 'momJokes', component: MomJokesComponent},
+  {path: 'dadJokes', component: DadJokesComponent},
+  {path: 'wholesomeFacts', component: WholesomeFactsComponent},
+  {path: 'homepage', component: HomePageComponent}
+]
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,8 +27,8 @@ import { WholesomeFactsComponent } from './wholesome-facts/wholesome-facts.compo
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
-
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [],
   bootstrap: [AppComponent]
